@@ -13,10 +13,7 @@ import (
 var DB *gorm.DB
 
 func InitDB() {
-	err := godotenv.Load()
-	if err != nil {
-		panic("Failed to load .env")
-	}
+	_ = godotenv.Load()
 
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true",
 		os.Getenv("DB_USER"),
