@@ -1,0 +1,30 @@
+# version: "3.8"
+
+services:
+  db:
+    image: mysql:8
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: anakgantar123
+      MYSQL_DATABASE: db-siswa
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  app:
+    build: .
+    container_name: golang-app
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    # volumes:
+    #   - .:/app
+    # command: ["./main"]
+
+volumes:
+  db_data:
