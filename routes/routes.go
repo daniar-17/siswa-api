@@ -18,5 +18,7 @@ func SetupRoutes(r *gin.Engine) {
 		auth.GET("", controllers.GetStudents)
 		auth.PUT("/:id", controllers.UpdateStudent)
 		auth.DELETE("/:id", controllers.DeleteStudent)
+
+		auth.GET("/specialist", controllers.CreateSpecialist)
 	}
 }
