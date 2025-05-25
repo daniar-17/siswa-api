@@ -14,7 +14,7 @@ services:
       - db_data:/var/lib/mysql
 
   app:
-    build: .
+    image: daniar17/siswa-api:latest
     container_name: golang-app
     depends_on:
       - db
