@@ -20,5 +20,6 @@ func SetupRoutes(r *gin.Engine) {
 		auth.DELETE("/:id", controllers.DeleteStudent)
 
 		auth.GET("/specialist", controllers.CreateSpecialist)
+		auth.GET("/specialist2", controllers.GetSpecialist)
 	}
 }
